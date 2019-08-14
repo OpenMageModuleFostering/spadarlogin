@@ -32,9 +32,17 @@ class Widgento_Login_IndexController extends Mage_Core_Controller_Front_Action
         {
             /* @var $customerSession Mage_Customer_Model_Session */
             $customerSession = Mage::getSingleton('customer/session');
-            $customerSession
-                ->renewSession()
-                ->loginById($login->getCustomerId());
+
+            if (method_exists($customerSession, 'renewSession'))
+            {
+                $customerSession->renewSession();
+            }
+            else // for 1.4
+            {
+                $customerSession->logout();
+            }
+            
+            $customerSession->loginById($login->getCustomerId());
 
             return $this->_redirect('customer/account/');
         }

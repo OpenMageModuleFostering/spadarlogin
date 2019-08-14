@@ -21,15 +21,17 @@
 
 class Widgento_Login_Helper_Button extends Mage_Core_Helper_Abstract
 {
+    
+
     public function getButtonData()
     {
         return array(
             'label'   => $this->__('Log in customer'), 
-            'onclick' => 'window.open(\''.Mage::getModel('adminhtml/url')->getUrl('widgentologinadmin/', array('id' => $this->getCustomerId())).'\', \'customer\');', 
+            'onclick' => 'window.open(\''.Mage::getModel('adminhtml/url')->getUrl('widgentologinadmin/', array('id' => $this->_getCustomerId())).'\', \'customer\');', 
             );
     }
 
-    protected function getCustomerId()
+    protected function _getCustomerId()
     {
         $customerId      = 0;
         $currentCustomer = Mage::registry('current_customer');
@@ -53,7 +55,7 @@ class Widgento_Login_Helper_Button extends Mage_Core_Helper_Abstract
         /* @var $adminSession Mage_Admin_Model_Session */
         $adminSession = Mage::getSingleton('admin/session');
 
-        if (!$adminSession->isAllowed('customer/login') || !$this->getCustomerId())
+        if (!$adminSession->isAllowed('customer/login') || !Mage::helper('widgentologin')->getCustomerStoreId($this->_getCustomerId()))
         {
             return 'hidden';
         }

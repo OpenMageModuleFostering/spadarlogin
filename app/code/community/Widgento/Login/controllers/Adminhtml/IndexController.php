@@ -41,7 +41,7 @@ class Widgento_Login_Adminhtml_IndexController extends Mage_Adminhtml_Controller
 
         return $this->_redirect('widgentologin/', array(
         	'id'     => $hash, 
-        	'_store' => $customer->getStoreId(), 
+        	'_store' => Mage::helper('widgentologin')->getCustomerStoreId($customer->getStoreId()), 
             ));
     }
 }
