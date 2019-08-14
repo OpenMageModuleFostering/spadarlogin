@@ -31,6 +31,14 @@ class Widgento_Login_Model_Mysql4_Login extends Mage_Core_Model_Mysql4_Abstract
 
     public function truncate()
     {
-        $this->_getWriteAdapter()->truncateTable($this->getMainTable());
+        $db = $this->_getWriteAdapter();
+        if (method_exists($db, 'truncateTable'))
+        {
+            $db->truncateTable($this->getMainTable());
+        }
+        else
+        {
+            $db->truncate($this->getMainTable());
+        }
     }
 }
