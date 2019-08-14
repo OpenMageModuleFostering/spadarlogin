@@ -1,7 +1,7 @@
 {
     "name": "OpenMageModuleFostering/SpadarLogin",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "Widgento-Modules-License",
     "homepage": "",
     "description": "Login as Customer",
     "authors": [

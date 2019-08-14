@@ -13,7 +13,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -43,6 +43,17 @@ CREATE TABLE `'.$installer->getTable('widgentologin/login').'` (
   `customer_id` INT UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`login_Id`)
 ) ENGINE = InnoDB;
+
+');
+
+$installer->run('
+
+ALTER TABLE `'.$installer->getTable('widgentologin/login').'`
+  ADD COLUMN `created_at` TIMESTAMP NOT NULL
+, ADD COLUMN `is_active` TINYINT UNSIGNED NOT NULL DEFAULT 0
+, ADD COLUMN `admin_id` SMALLINT UNSIGNED NOT NULL
+, ADD COLUMN `store_id` SMALLINT UNSIGNED NULL
+;
 
 ');
 
