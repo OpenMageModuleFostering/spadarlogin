@@ -1,7 +1,7 @@
 {
     "name": "OpenMageModuleFostering/SpadarLogin",
     "type": "magento-module",
-    "license": "Widgento-Modules-License",
+    "license": "Widgento-License",
     "homepage": "",
     "description": "Login as Customer",
     "authors": [
