@@ -12,7 +12,7 @@
  * @category   Widgento
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
- * @copyright  Copyright (c) 2012-2013 Yury Ksenevich p.e.
+ * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
  * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
@@ -29,17 +29,20 @@ class Widgento_Login_Helper_Data extends Mage_Core_Helper_Abstract
         }
     
         $customer = Mage::getModel('customer/customer')->load($customerId);
-    
-        $customerStore = Mage::app()->getStore($customer->getStoreId());
- 
-        if ($customerStore && $customerStore->getIsActive())
+
+        if ($customer->getStoreId())
         {
-            return $customer->getStoreId();
+            $customerStore = Mage::app()->getStore($customer->getStoreId());
+
+            if ($customerStore->getId() && $customerStore->getIsActive())
+            {
+                return $customer->getStoreId();
+            }
         }
     
-        if ($customerStore)
+        if ($customer->getWebsiteId())
         {
-            $customerWebsite = Mage::app()->getWebsite($customerStore->getWebsiteId());
+            $customerWebsite = Mage::app()->getWebsite($customer->getWebsiteId());
     
             foreach ($customerWebsite->getStores() as $websiteStore)
             {
