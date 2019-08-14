@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/SpadarLogin",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Login as Customer",
+    "authors": [
+    {
+        "name": "Yury Ksenevich",
+        "email": "info@widgento.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
