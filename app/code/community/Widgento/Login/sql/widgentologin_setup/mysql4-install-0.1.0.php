@@ -28,10 +28,11 @@ $installer->run('
 
 DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login_deprecated').';
 
-DELETE FROM `'.$installer->getTable('core/resource').'
+DELETE FROM `'.$installer->getTable('core/resource').'`
 WHERE code LIKE "spadar%";
 
 ');
+
 
 $installer->run('
 

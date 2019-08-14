@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Widgento_Login>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Widgento_Login>
     </modules>
 
@@ -75,6 +75,16 @@
 				</connection>
 			</widgentologin_read>
 		</resources>
+        <events>
+            <widgento_core_uninstall>
+                <observers>
+                    <widgentologin>
+                        <class>widgentologin/uninstall</class>
+                        <method>uninstall</method>
+                    </widgentologin>
+                </observers>
+            </widgento_core_uninstall>
+        </events>
     </global>
 
     <admin>
