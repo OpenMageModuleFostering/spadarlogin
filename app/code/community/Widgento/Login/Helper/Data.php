@@ -31,7 +31,7 @@ class Widgento_Login_Helper_Data extends Mage_Core_Helper_Abstract
         $customer = Mage::getModel('customer/customer')->load($customerId);
     
         $customerStore = Mage::app()->getStore($customer->getStoreId());
-    
+ 
         if ($customerStore && $customerStore->getIsActive())
         {
             return $customer->getStoreId();
@@ -52,7 +52,7 @@ class Widgento_Login_Helper_Data extends Mage_Core_Helper_Abstract
     
         if (0 == Mage::getStoreConfig('customer/account_share/scope'))
         {
-            Mage::app()->getDefaultStoreView()->getId();
+            return Mage::app()->getDefaultStoreView()->getId();
         }
     }
 }
