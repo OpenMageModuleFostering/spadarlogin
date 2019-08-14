@@ -26,7 +26,7 @@ $installer->startSetup();
 
 $installer->run('
 
-DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login_deprecated').';
+DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login_deprecated').'`;
 
 DELETE FROM `'.$installer->getTable('core/resource').'`
 WHERE code LIKE "spadar%";
@@ -35,7 +35,7 @@ WHERE code LIKE "spadar%";
 
 $installer->run('
 
-DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login').';
+DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login').'`;
 
 CREATE TABLE `'.$installer->getTable('widgentologin/login').'` (
   `login_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,

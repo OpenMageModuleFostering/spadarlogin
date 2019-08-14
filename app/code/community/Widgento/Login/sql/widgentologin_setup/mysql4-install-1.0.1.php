@@ -26,7 +26,7 @@ $installer->startSetup();
 
 $installer->run('
 
-DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login').';
+DROP TABLE IF EXISTS `'.$installer->getTable('widgentologin/login').'`;
 
 CREATE TABLE `'.$installer->getTable('widgentologin/login').'` (
   `login_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
