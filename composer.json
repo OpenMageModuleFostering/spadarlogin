@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/SpadarLogin",
+    "name": "OpenMageModuleFostering\/SpadarLogin",
     "type": "magento-module",
     "license": "Widgento-License",
     "homepage": "",
     "description": "Login as Customer",
     "authors": [
-    {
-        "name": "Yury Ksenevich",
-        "email": "info@widgento.com"
-    }
-],
+        {
+            "name": "Yury Ksenevich",
+            "email": "info@widgento.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
